@@ -20,12 +20,9 @@ async def fetch_and_save_links_kyodonews(session, new_links_kyodo):
         async with session.get(url, timeout=10) as response:
             if response.status == 200:
                 soup = BeautifulSoup(await response.text(), 'html.parser')
-
-                # Ana içerik bölümünü belirle
                 sec_latest = soup.find("div", class_="sec-latest")
 
                 if sec_latest:
-                    # Her bir haber bloğunu seç
                     news_blocks = sec_latest.find_all("div", class_="row")
 
                     for news_block in news_blocks:
@@ -34,32 +31,21 @@ async def fetch_and_save_links_kyodonews(session, new_links_kyodo):
                         for news_content in news_contents:
                             link = news_content.a.get("href")
                             full_news_url = f"https://english.kyodonews.net{link}"
-
-                            # İlgili haber başlığını çek
                             title = news_content.h3.get_text(strip=True)
 
-                            # İlgili haber içeriğini çek
-                            response_content = requests.get(full_news_url)
-
-                            if response_content.status_code == 200:
-                                soup_content = BeautifulSoup(response_content.content, "html.parser")
-                                news_content_text = "\n".join(paragraph.get_text(strip=True) for paragraph in soup_content.select("div.article-body p"))
-                            else:
-                                print("İçerik bulunamadı")
-
-                    # Veritabanındaki linklerin kontrolü
-                    existing_links = get_existing_links()
-                    new_links_kyodo = [link for link in new_links_kyodo if link not in existing_links]
-
-                    if new_links_kyodo:
-                        print(f"Yeni linkler bulundu: {new_links_kyodo}")
-                        save_links_to_database(new_links_kyodo)
-
+                            # İlgili haber içeriğini asenkron olarak çek
+                            async with session.get(full_news_url) as response_content:
+                                if response_content.status == 200:
+                                    soup_content = BeautifulSoup(await response_content.text(), "html.parser")
+                                    news_content_text = "\n".join(paragraph.get_text(strip=True) for paragraph in soup_content.select("div.article-body p"))
+                                else:
+                                    print("İçerik bulunamadı")
                 else:
                     print(f"Sayfa yüklenemedi. Durum Kodu: {response.status}")
 
     except Exception as e:
         print(f"Bağlantı hatası: {e}")
+
 
 
 def get_existing_links():
@@ -90,6 +76,7 @@ def save_links_to_database(links):
             # Her linki "news_link" sütununa eklemek için SQL sorgusu
             insert_query = "INSERT INTO news (news_link) VALUES (%s)"
             data = (link,)
+            print("Linkler veri tabanına kayıt edildi.")
 
             cursor.execute(insert_query, data)
 
@@ -106,7 +93,7 @@ async def main():
     async with aiohttp.ClientSession() as session:
         while True:
             new_links_world = set()
-            await fetch_and_save_links_kyodonews(session, new_links_kyodo)
+            await fetch_and_save_links_kyodonews(session, new_links_world)
             await asyncio.sleep(30)
 
 # Asenkron ana döngüyü başlat

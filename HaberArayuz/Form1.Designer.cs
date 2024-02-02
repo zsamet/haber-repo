@@ -28,18 +28,34 @@
         /// </summary>
         private void InitializeComponent()
         {
+            label1 = new Label();
             SuspendLayout();
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Tahoma", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(425, 80);
+            label1.Name = "label1";
+            label1.Size = new Size(248, 36);
+            label1.TabIndex = 0;
+            label1.Text = "Haber Çeviri Botu";
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1164, 622);
+            Controls.Add(label1);
             Name = "Form1";
             Text = "Form1";
+            Load += Form1_Load;
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
+
+        private Label label1;
     }
 }
