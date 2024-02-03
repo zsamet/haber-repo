@@ -29,8 +29,14 @@
         private void InitializeComponent()
         {
             textBox1 = new TextBox();
+            label1 = new Label();
+            label2 = new Label();
+            label3 = new Label();
+            label4 = new Label();
+            haberIncele = new Button();
             richTextBox1 = new RichTextBox();
             richTextBox2 = new RichTextBox();
+            richTextBox3 = new RichTextBox();
             SuspendLayout();
             // 
             // textBox1
@@ -40,29 +46,91 @@
             textBox1.Size = new Size(0, 27);
             textBox1.TabIndex = 0;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Tahoma", 18F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.Location = new Point(637, 9);
+            label1.Name = "label1";
+            label1.Size = new Size(185, 36);
+            label1.TabIndex = 4;
+            label1.Text = "Haber İncele";
+            // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Location = new Point(210, 72);
+            label2.Name = "label2";
+            label2.Size = new Size(114, 20);
+            label2.TabIndex = 5;
+            label2.Text = "Haberin Orijinal";
+            label2.Click += label2_Click;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(665, 72);
+            label3.Name = "label3";
+            label3.Size = new Size(119, 20);
+            label3.TabIndex = 6;
+            label3.Text = "Haberin Türkçesi";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Location = new Point(1107, 72);
+            label4.Name = "label4";
+            label4.Size = new Size(143, 20);
+            label4.TabIndex = 7;
+            label4.Text = "Yayımlanacak Haber";
+            // 
+            // haberIncele
+            // 
+            haberIncele.Location = new Point(1131, 672);
+            haberIncele.Name = "haberIncele";
+            haberIncele.Size = new Size(147, 49);
+            haberIncele.TabIndex = 8;
+            haberIncele.Text = "Haberi yayımla";
+            haberIncele.UseVisualStyleBackColor = true;
+            haberIncele.Click += haberIncele_Click;
+            // 
             // richTextBox1
             // 
-            richTextBox1.Location = new Point(78, 101);
+            richTextBox1.Location = new Point(65, 104);
             richTextBox1.Name = "richTextBox1";
-            richTextBox1.Size = new Size(403, 592);
-            richTextBox1.TabIndex = 1;
+            richTextBox1.Size = new Size(410, 562);
+            richTextBox1.TabIndex = 9;
             richTextBox1.Text = "";
             // 
             // richTextBox2
             // 
-            richTextBox2.Location = new Point(530, 70);
+            richTextBox2.Location = new Point(518, 104);
             richTextBox2.Name = "richTextBox2";
-            richTextBox2.Size = new Size(403, 592);
-            richTextBox2.TabIndex = 2;
+            richTextBox2.Size = new Size(410, 562);
+            richTextBox2.TabIndex = 10;
             richTextBox2.Text = "";
+            // 
+            // richTextBox3
+            // 
+            richTextBox3.Location = new Point(972, 104);
+            richTextBox3.Name = "richTextBox3";
+            richTextBox3.Size = new Size(410, 562);
+            richTextBox3.TabIndex = 11;
+            richTextBox3.Text = "";
             // 
             // haberGoster
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1462, 733);
+            Controls.Add(richTextBox3);
             Controls.Add(richTextBox2);
             Controls.Add(richTextBox1);
+            Controls.Add(haberIncele);
+            Controls.Add(label4);
+            Controls.Add(label3);
+            Controls.Add(label2);
+            Controls.Add(label1);
             Controls.Add(textBox1);
             Name = "haberGoster";
             Text = "haberGoster";
@@ -73,7 +141,16 @@
         #endregion
 
         private TextBox textBox1;
+        private RichTextBox textIng;
+        private RichTextBox textTurk;
+        private RichTextBox textYayim;
+        private Label label1;
+        private Label label2;
+        private Label label3;
+        private Label label4;
+        private Button haberIncele;
         private RichTextBox richTextBox1;
         private RichTextBox richTextBox2;
+        private RichTextBox richTextBox3;
     }
 }

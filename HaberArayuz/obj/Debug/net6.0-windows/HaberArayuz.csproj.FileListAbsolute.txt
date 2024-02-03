@@ -34,3 +34,4 @@ C:\Users\cevik\OneDrive\Belgeler\GitHub\ArchiveTest\ArciheveTest1\haber-repo\Hab
 C:\Users\cevik\OneDrive\Belgeler\GitHub\ArchiveTest\ArciheveTest1\haber-repo\HaberArayuz\obj\Debug\net6.0-windows\HaberArayuz.pdb
 C:\Users\cevik\OneDrive\Belgeler\GitHub\ArchiveTest\ArciheveTest1\haber-repo\HaberArayuz\obj\Debug\net6.0-windows\HaberArayuz.genruntimeconfig.cache
 C:\Users\cevik\OneDrive\Belgeler\GitHub\ArchiveTest\ArciheveTest1\haber-repo\HaberArayuz\obj\Debug\net6.0-windows\ref\HaberArayuz.dll
+C:\Users\cevik\OneDrive\Belgeler\GitHub\ArchiveTest\ArciheveTest1\haber-repo\HaberArayuz\obj\Debug\net6.0-windows\HaberArayuz.haberGoster.resources

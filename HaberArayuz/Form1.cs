@@ -1,25 +1,29 @@
 using System;
 using System.Data;
+using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 
 
 namespace HaberArayuz
 {
+
     public partial class Form1 : Form
     {
         static string connectionString = "Server=172.21.54.148;Port=3306;Database=neis_news;User=NYP23-11;Password=Uludag9512357.;";
         MySqlConnection connection = new MySqlConnection(connectionString);
 
+
         public Form1()
         {
             InitializeComponent();
             InitializeTimer();
+
         }
 
         private void InitializeTimer()
         {
             // Timer ayarlarý
-            timer1.Interval = 20000; // 10 saniyede bir güncelle
+            timer1.Interval = 20000; // 20 saniyede bir güncelle
             timer1.Tick += new EventHandler(timer1_Tick); // Olay iþleyicisi
             timer1.Start(); // Timer'ý baþlat
         }
@@ -43,6 +47,11 @@ namespace HaberArayuz
                 MySqlDataAdapter da = new MySqlDataAdapter(query, connection);
                 DataTable dt = new DataTable();
                 da.Fill(dt);
+
+                // DataGridView'i temizle
+                haberView.DataSource = null;
+
+                // Yeni verileri yükle
                 haberView.DataSource = dt;
             }
             catch (Exception ex)
@@ -58,15 +67,23 @@ namespace HaberArayuz
             }
         }
 
-        private void haberCek_Click(object sender, EventArgs e)
-        {
-            
-        }
-
 
         private void haberView_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
+        }
+
+        private void haberCek_Click(object sender, EventArgs e)
+        {
+            if (haberView.CurrentRow != null)
+            {
+                var haberId = haberView.CurrentRow.Cells["ID"].Value.ToString(); // 'ID' sütunu varsayýmý
+                var haberBasligi = haberView.CurrentRow.Cells["news_eng"].Value.ToString();
+                var haberIcerigi = haberView.CurrentRow.Cells["news_turk"].Value.ToString();
+
+                haberGoster gosterForm = new haberGoster(haberBasligi, haberIcerigi, haberId); // ID'yi de parametre olarak geç
+                gosterForm.ShowDialog();
+            }
         }
     }
 }
