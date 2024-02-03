@@ -40,7 +40,7 @@
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Tahoma", 18F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(437, 51);
+            label1.Location = new Point(559, 52);
             label1.Name = "label1";
             label1.Size = new Size(248, 36);
             label1.TabIndex = 0;
@@ -48,22 +48,23 @@
             // 
             // haberView
             // 
+            haberView.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             haberView.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             haberView.Location = new Point(40, 119);
             haberView.Name = "haberView";
             haberView.RowHeadersWidth = 51;
             haberView.RowTemplate.Height = 29;
-            haberView.Size = new Size(1085, 476);
+            haberView.Size = new Size(1376, 476);
             haberView.TabIndex = 1;
             haberView.CellContentClick += haberView_CellContentClick;
             // 
             // haberCek
             // 
-            haberCek.Location = new Point(453, 619);
+            haberCek.Location = new Point(638, 623);
             haberCek.Name = "haberCek";
             haberCek.Size = new Size(188, 56);
             haberCek.TabIndex = 2;
-            haberCek.Text = "Haberleri Listele";
+            haberCek.Text = "Haberi İncele";
             haberCek.UseVisualStyleBackColor = true;
             haberCek.Click += haberCek_Click;
             // 
@@ -71,12 +72,12 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1164, 717);
+            ClientSize = new Size(1462, 733);
             Controls.Add(haberCek);
             Controls.Add(haberView);
             Controls.Add(label1);
             Name = "Form1";
-            Text = "Form1";
+            Text = "Haber Çeviri Botu";
             Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)haberView).EndInit();
             ResumeLayout(false);

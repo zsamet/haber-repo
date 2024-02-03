@@ -12,8 +12,8 @@ db_config = {
 }
 
 # OpenAI API anahtarınız
-OPEN_AI_API_KEY = "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"
-ASSISTANT_ID = "asst_tagNB2jgTLfgg8bGQTJ9QLD2"
+OPEN_AI_API_KEY = "OPENAI_API_KEY"
+ASSISTANT_ID = "ASST_ID"
 client = OpenAI(api_key=OPEN_AI_API_KEY)
 
 def translate_and_update():

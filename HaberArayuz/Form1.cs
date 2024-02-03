@@ -19,7 +19,7 @@ namespace HaberArayuz
         private void InitializeTimer()
         {
             // Timer ayarlarý
-            timer1.Interval = 10000; // 10 saniyede bir güncelle
+            timer1.Interval = 20000; // 10 saniyede bir güncelle
             timer1.Tick += new EventHandler(timer1_Tick); // Olay iþleyicisi
             timer1.Start(); // Timer'ý baþlat
         }
@@ -31,7 +31,7 @@ namespace HaberArayuz
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            LoadData();
         }
 
         private void LoadData()
@@ -60,7 +60,7 @@ namespace HaberArayuz
 
         private void haberCek_Click(object sender, EventArgs e)
         {
-            LoadData();
+            
         }
 
 
