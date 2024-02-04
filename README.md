@@ -1,4 +1,5 @@
 NEİS-TECH
+Hızlı Haber Çeviri Botu
 
 combined_bbc dosyasını çalıştırarak haber çekme işlemini başlatabilirsiniz , bu süreçte fetch_news_content() fonskiyonu ile haber çekim sğürecini başlatıyoruz ,
 burada asenkron yapı kullandık ve Task.Delay ile sitenin düzenli aralıklarla kontrol edilmesini sağladık. 'using' bloklarını kullanarak bu süreyi kontrol altında tutabiliryoruz. Yakalanan haberler update_news_content() ile okulumuzun kullandığı phpmyAdmin veritabanımıza mySql ile kaydediyoruz ,
