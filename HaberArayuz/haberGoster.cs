@@ -21,7 +21,7 @@ namespace HaberArayuz
         private void haberIncele_Click(object sender, EventArgs e)
         {
             // richTextBox3 içeriğini al
-            string richTextBoxText = richTextBox3.Text.Trim(); // Başta ve sondaki boşlukları kaldır
+            // string richTextBoxText = richTextBox3.Text.Trim(); // Başta ve sondaki boşlukları kaldır
 
             using (MySqlConnection connection = new MySqlConnection(connectionString))
             {
@@ -33,7 +33,7 @@ namespace HaberArayuz
                     using (MySqlCommand cmd = new MySqlCommand(updateQuery, connection))
                     {
                         // Eğer richTextBoxText boşsa, DBNull.Value kullanarak NULL olarak kaydet
-                        cmd.Parameters.AddWithValue("@news_yayin", string.IsNullOrEmpty(richTextBoxText) ? (object)DBNull.Value : richTextBoxText);
+                        //cmd.Parameters.AddWithValue("@news_yayin", string.IsNullOrEmpty(richTextBoxText) ? (object)DBNull.Value : richTextBoxText);
                         cmd.Parameters.AddWithValue("@ID", haberId);
                         cmd.ExecuteNonQuery();
 
@@ -48,6 +48,11 @@ namespace HaberArayuz
         }
 
         private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
         {
 
         }

@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("HaberArayuz")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+8a21bf0d77acbb3c460756456c4f4f843c4677a3")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4a3bb8c08aca22adc3074440e9d426d90f8d3868")]
 [assembly: System.Reflection.AssemblyProductAttribute("HaberArayuz")]
 [assembly: System.Reflection.AssemblyTitleAttribute("HaberArayuz")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

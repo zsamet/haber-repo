@@ -32,11 +32,8 @@
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
-            label4 = new Label();
-            haberIncele = new Button();
             richTextBox1 = new RichTextBox();
             richTextBox2 = new RichTextBox();
-            richTextBox3 = new RichTextBox();
             SuspendLayout();
             // 
             // textBox1
@@ -59,75 +56,50 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(210, 72);
+            label2.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Location = new Point(275, 69);
             label2.Name = "label2";
-            label2.Size = new Size(114, 20);
+            label2.Size = new Size(229, 32);
             label2.TabIndex = 5;
-            label2.Text = "Haberin Orijinal";
+            label2.Text = "Haberin Orijinal Hali";
             label2.Click += label2_Click;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(665, 72);
+            label3.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.Location = new Point(984, 69);
             label3.Name = "label3";
-            label3.Size = new Size(119, 20);
+            label3.Size = new Size(255, 32);
             label3.TabIndex = 6;
-            label3.Text = "Haberin Türkçesi";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(1107, 72);
-            label4.Name = "label4";
-            label4.Size = new Size(143, 20);
-            label4.TabIndex = 7;
-            label4.Text = "Yayımlanacak Haber";
-            // 
-            // haberIncele
-            // 
-            haberIncele.Location = new Point(1131, 672);
-            haberIncele.Name = "haberIncele";
-            haberIncele.Size = new Size(147, 49);
-            haberIncele.TabIndex = 8;
-            haberIncele.Text = "Haberi yayımla";
-            haberIncele.UseVisualStyleBackColor = true;
-            haberIncele.Click += haberIncele_Click;
+            label3.Text = "Hızlı Haber Çeviri Botu";
+            label3.Click += label3_Click;
             // 
             // richTextBox1
             // 
+            richTextBox1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             richTextBox1.Location = new Point(65, 104);
             richTextBox1.Name = "richTextBox1";
-            richTextBox1.Size = new Size(410, 562);
+            richTextBox1.Size = new Size(657, 562);
             richTextBox1.TabIndex = 9;
             richTextBox1.Text = "";
             // 
             // richTextBox2
             // 
-            richTextBox2.Location = new Point(518, 104);
+            richTextBox2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            richTextBox2.Location = new Point(774, 104);
             richTextBox2.Name = "richTextBox2";
-            richTextBox2.Size = new Size(410, 562);
+            richTextBox2.Size = new Size(629, 562);
             richTextBox2.TabIndex = 10;
             richTextBox2.Text = "";
-            // 
-            // richTextBox3
-            // 
-            richTextBox3.Location = new Point(972, 104);
-            richTextBox3.Name = "richTextBox3";
-            richTextBox3.Size = new Size(410, 562);
-            richTextBox3.TabIndex = 11;
-            richTextBox3.Text = "";
             // 
             // haberGoster
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1462, 733);
-            Controls.Add(richTextBox3);
             Controls.Add(richTextBox2);
             Controls.Add(richTextBox1);
-            Controls.Add(haberIncele);
-            Controls.Add(label4);
             Controls.Add(label3);
             Controls.Add(label2);
             Controls.Add(label1);
@@ -147,10 +119,7 @@
         private Label label1;
         private Label label2;
         private Label label3;
-        private Label label4;
-        private Button haberIncele;
         private RichTextBox richTextBox1;
         private RichTextBox richTextBox2;
-        private RichTextBox richTextBox3;
     }
 }
