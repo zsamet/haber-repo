@@ -1,4 +1,4 @@
-NEİS-TECH
+
 Hızlı Haber Çeviri Botu
 
 combined_bbc dosyasını çalıştırarak haber çekme işlemini başlatabilirsiniz , bu süreçte fetch_news_content() fonskiyonu ile haber çekim sğürecini başlatıyoruz ,
